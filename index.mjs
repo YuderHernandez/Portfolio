@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 
 const app = express()
 
-app.use(express.static('public'));
+app.use(express.static('public')); //se declaran carpetas del contenido interactivo, para facil acceso en html, css y js
 app.use(express.static('views'));
 const Port = process.env.PORT || 3001;
 const hostname = "http://127.0.0.1";
@@ -20,17 +20,17 @@ app.get("/",(req, res, next)=>{
 })
 
 app.get("/Utilidades",(req, res)=>{
-    res.sendFile(process.cwd() + '/views/catalogo.html')    //http://localhost:3000/catalogo
+    res.sendFile(process.cwd() + '/views/Utilidades.html')    //http://localhost:3000/catalogo
 })
 
-app.get("/Topics informaticos",(req, res)=>{
-    res.sendFile(process.cwd() + '/views/curiosidades.html')     //http://localhost:3000/curiosidades
+app.get("/Topics_informaticos",(req, res)=>{
+    res.sendFile(process.cwd() + '/views/Topics_informaticos.html')     //http://localhost:3000/curiosidades
 })
 app.get("/Proyectos",(req, res)=>{
-    res.sendFile(process.cwd() + '/views/curiosidades.html')     //http://localhost:3000/curiosidades
+    res.sendFile(process.cwd() + '/views/Proyectos.html')     //http://localhost:3000/curiosidades
 })
 app.get("/Registro",(req, res)=>{
-    res.sendFile(process.cwd() + '/views/curiosidades.html')     //http://localhost:3000/curiosidades
+    res.sendFile(process.cwd() + '/views/Registro.html')     //http://localhost:3000/curiosidades
 })
 
 
@@ -41,5 +41,5 @@ app.get("/Registro",(req, res)=>{
 // })
 
 
-http.createServer(app).listen(Port)
+http.createServer(app).listen(Port) // se deja en escucha permanente el servidor http
 
